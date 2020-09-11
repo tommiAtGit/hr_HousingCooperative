@@ -23,16 +23,21 @@ import lombok.Setter;
 @Entity
 public class HousingCooperative {
 
+	
 	@Id
 	@GeneratedValue(generator="UUID")
 	@GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-	@Column(length = 36, columnDefinition = "varchar", updatable = false, nullable = false)
+	@Column(length = 16, columnDefinition = "BINARY(16)", updatable = false, nullable = false)
 	private UUID id;
 	
-	
+	@Column(name = "Name")
 	private String name;
+	@Column(name = "Address")
 	private String address;
+	@Column(name = "postnumber")
 	private String postNumber;
+	@Column(name = "City")
 	private String city;
+	@Column(name = "bankaccount")
 	private String bankAccount;
 }

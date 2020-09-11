@@ -14,6 +14,8 @@ public interface CooperativeService {
 	
 	HousingCooperativeDto saveNewHc(HousingCooperativeDto hcDto);
 	
+	void deleteHc(HousingCooperativeDto hcDto);
+	
 	
 	
 	

@@ -2,10 +2,13 @@ package com.myjava.housingrecord.repositories;
 
 import java.util.UUID;
 
-import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import com.myjava.housingrecord.domain.HousingCooperative;
 
-public interface CooperativeRepository extends PagingAndSortingRepository<HousingCooperative, UUID>  {
+
+@Repository
+public interface CooperativeRepository extends CrudRepository<HousingCooperative, UUID> {
 
 }
