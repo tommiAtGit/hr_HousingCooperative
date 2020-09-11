@@ -15,29 +15,39 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.myjava.housingrecord.web.model.HousingCooperativeDto;
 import com.myjava.housingrecord.web.service.CooperativeService;
+//import com.sun.org.slf4j.internal.Logger;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @RequiredArgsConstructor
 @RequestMapping("/api/housingcooperative")
 @RestController
 public class HousingCooperativeController {
 
+	
 	private final CooperativeService cooperativeService;
 	
 	@GetMapping("/{cooperativeId}")
 	public ResponseEntity<HousingCooperativeDto>getCooperativeById(@PathVariable("cooperativeId")UUID cooperativeId){
+		log.info("Get Cooperative called with id: " + cooperativeId);
 		
 		return new ResponseEntity<HousingCooperativeDto>(cooperativeService.getById(cooperativeId),HttpStatus.OK);
 	}
 	
 	@PostMapping
 	public ResponseEntity<HousingCooperativeDto>saveHousingCooperative( @Validated @RequestBody HousingCooperativeDto hcDto){
+		log.info("New cooperative added with name: " + hcDto.getName());
 		return new ResponseEntity<HousingCooperativeDto>(cooperativeService.saveNewHc(hcDto),HttpStatus.CREATED);
+	
 	}
 	@PutMapping("/{cooperativeId}")
-	public ResponseEntity<HousingCooperativeDto>updateHousingCooperative( @Validated @PathVariable("cooperativeId")UUID beerId, @Validated @RequestBody HousingCooperativeDto hcDto){
-		return new ResponseEntity<HousingCooperativeDto>(cooperativeService.updateHC(beerId, hcDto),HttpStatus.NO_CONTENT);
+	public ResponseEntity<HousingCooperativeDto>updateHousingCooperative( @Validated @PathVariable("cooperativeId")UUID cooperativeId, @Validated @RequestBody HousingCooperativeDto hcDto){
+	
+		log.info("Update Cooperative called with id: " + cooperativeId);
+		
+		return new ResponseEntity<HousingCooperativeDto>(cooperativeService.updateHC(cooperativeId, hcDto),HttpStatus.NO_CONTENT);
 	}
 	
 }
