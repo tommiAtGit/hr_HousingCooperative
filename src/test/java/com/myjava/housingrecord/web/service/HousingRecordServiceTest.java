@@ -17,6 +17,24 @@ class HousingRecordServiceTest {
 	CooperativeService service;
 	
 	@Test
+	void SaveNewHCtest() {
+		
+		HousingCooperativeDto actualDto = service.saveNewHc(getValidCooperateiveDto());
+		assertNotNull(actualDto);
+		assertEquals(getValidCooperateiveDto().getName(), actualDto.getName());
+		
+		//Clear content
+		try {
+			service.deleteHc(actualDto);
+		} catch (Exception e) {
+			assertFalse(false);
+		}
+		
+		
+	}
+	
+
+	@Test
 	void GetByIdTest() {
 		UUID ExpectedId = UUID.fromString("3132332d-3132-332d-3435-360000000000");
 		
@@ -37,23 +55,7 @@ class HousingRecordServiceTest {
 		System.out.println("*** uuid: **** " + actualDto.getId().toString());
 		
 	}
-	@Test
-	void SaveNewHCtest() {
-		
-		HousingCooperativeDto actualDto = service.saveNewHc(getValidCooperateiveDto());
-		assertNotNull(actualDto);
-		assertEquals(getValidCooperateiveDto().getName(), actualDto.getName());
-		
-		//Clear content
-		try {
-			service.deleteHc(actualDto);
-		} catch (Exception e) {
-			assertFalse(false);
-		}
-		
-		
-	}
-
+	
 	private HousingCooperativeDto getValidCooperateiveDto() {
 		
 		return HousingCooperativeDto.builder()

@@ -31,12 +31,14 @@ public class CooperativeServiceImpl implements CooperativeService {
 		List<HousingCooperative> hCs = (List<HousingCooperative>) repository.findAll();
 		
 		if (hCs != null) {
-			for (HousingCooperative housingCooperative : hCs) {
-				if (housingCooperative.getName().equals(cooperativeName)) {
-					return mapper.HousingCooperativeToDto(
-							housingCooperative);
-				}
-			}
+			HousingCooperative cooperative =  hCs.stream()
+			.filter(h->h.getName().equals(cooperativeName))
+			.findAny()
+			.orElse(null);
+			
+			return mapper.HousingCooperativeToDto(
+					cooperative);
+			
 		}
 			
 		return null;
@@ -69,6 +71,12 @@ public class CooperativeServiceImpl implements CooperativeService {
 		
 		repository.delete(mapper.DtoToHousingCooperative(hcDto));
 		
+	}
+
+	@Override
+	public List<HousingCooperativeDto> getAll() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

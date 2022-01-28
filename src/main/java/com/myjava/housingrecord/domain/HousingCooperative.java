@@ -29,7 +29,6 @@ public class HousingCooperative {
 	@GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
 	@Column(length = 16, columnDefinition = "BINARY(16)", updatable = false, nullable = false)
 	private UUID id;
-	
 	@Column(name = "Name")
 	private String name;
 	@Column(name = "Address")
