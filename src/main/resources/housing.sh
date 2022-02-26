@@ -1,5 +1,6 @@
 #!/bin/sh
-mysqladmin -u root --password=Tommijgqb#19 create housingdb
-mysql -u root --password=Tommijgqb#19 housingdb < ./HousingCooperative.sql
-mysqlshow -u root --password=Tommijgqb#19
-mysqlshow -u root --password=Tommijgqb#19 housingdb
+mysqladmin -h localhost -P 3306 --protocol=tcp -u root --password=Tommijgqb#19 drop hc_housingdb
+mysqladmin -h localhost -P 3306 --protocol=tcp -u root --password=Tommijgqb#19 create hc_housingdb
+mysql -h localhost -P 3306 --protocol=tcp -u root --password=Tommijgqb#19 hc_housingdb < ./HousingCooperative.sql
+mysqlshow -h localhost -P 3306 --protocol=tcp -u root --password=Tommijgqb#19
+mysqlshow -h localhost -P 3306 --protocol=tcp -u root --password=Tommijgqb#19 hc_housingdb

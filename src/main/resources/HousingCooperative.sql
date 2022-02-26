@@ -1,4 +1,4 @@
-USE housingdb;
+USE hc_housingdb;
 DROP TABLE IF EXISTS housing_cooperative;
 
 CREATE TABLE housing_cooperative
