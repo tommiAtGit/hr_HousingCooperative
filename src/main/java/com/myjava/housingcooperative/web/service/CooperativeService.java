@@ -1,9 +1,9 @@
-package com.myjava.housingrecord.web.service;
+package com.myjava.housingcooperative.web.service;
 
 import java.util.List;
 import java.util.UUID;
 
-import com.myjava.housingrecord.web.model.HousingCooperativeDto;
+import com.myjava.housingcooperative.web.model.HousingCooperativeDto;
 
 public interface CooperativeService {
 

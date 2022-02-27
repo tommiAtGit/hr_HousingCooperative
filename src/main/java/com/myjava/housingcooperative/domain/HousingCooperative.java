@@ -1,4 +1,4 @@
-package com.myjava.housingrecord.domain;
+package com.myjava.housingcooperative.domain;
 
 import java.util.UUID;
 

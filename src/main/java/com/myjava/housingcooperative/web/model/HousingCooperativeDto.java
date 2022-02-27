@@ -1,4 +1,4 @@
-package com.myjava.housingrecord.web.model;
+package com.myjava.housingcooperative.web.model;
 
 import java.util.UUID;
 

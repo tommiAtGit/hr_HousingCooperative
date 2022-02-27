@@ -1,4 +1,4 @@
-package com.myjava.housingrecord.web.controller;
+package com.myjava.housingcooperative.web.controller;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
@@ -20,8 +20,9 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.myjava.housingrecord.web.model.HousingCooperativeDto;
-import com.myjava.housingrecord.web.service.CooperativeService;
+import com.myjava.housingcooperative.web.controller.HousingCooperativeController;
+import com.myjava.housingcooperative.web.model.HousingCooperativeDto;
+import com.myjava.housingcooperative.web.service.CooperativeService;
 
 @WebMvcTest(HousingCooperativeController.class)
 class HousingCooperateControllerTest {

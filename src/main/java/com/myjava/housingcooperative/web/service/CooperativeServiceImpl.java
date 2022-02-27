@@ -1,14 +1,14 @@
-package com.myjava.housingrecord.web.service;
+package com.myjava.housingcooperative.web.service;
 
 import java.util.List;
 import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
-import com.myjava.housingrecord.domain.HousingCooperative;
-import com.myjava.housingrecord.repositories.CooperativeRepository;
-import com.myjava.housingrecord.web.mappers.CooperativeMapper;
-import com.myjava.housingrecord.web.model.HousingCooperativeDto;
+import com.myjava.housingcooperative.domain.HousingCooperative;
+import com.myjava.housingcooperative.repositories.CooperativeRepository;
+import com.myjava.housingcooperative.web.mappers.CooperativeMapper;
+import com.myjava.housingcooperative.web.model.HousingCooperativeDto;
 
 import lombok.RequiredArgsConstructor;
 

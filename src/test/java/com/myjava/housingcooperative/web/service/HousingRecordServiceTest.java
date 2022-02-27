@@ -1,4 +1,4 @@
-package com.myjava.housingrecord.web.service;
+package com.myjava.housingcooperative.web.service;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -8,7 +8,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.myjava.housingrecord.web.model.HousingCooperativeDto;
+import com.myjava.housingcooperative.web.model.HousingCooperativeDto;
+import com.myjava.housingcooperative.web.service.CooperativeService;
 
 @SpringBootTest
 class HousingRecordServiceTest {

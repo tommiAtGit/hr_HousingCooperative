@@ -1,4 +1,4 @@
-package com.myjava.housingrecord.web.mappers;
+package com.myjava.housingcooperative.web.mappers;
 
 import java.sql.Timestamp;
 import java.time.OffsetDateTime;

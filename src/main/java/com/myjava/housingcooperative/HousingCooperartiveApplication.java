@@ -1,13 +1,13 @@
-package com.myjava.housingrecord;
+package com.myjava.housingcooperative;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HousingRecordApplication {
+public class HousingCooperartiveApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HousingRecordApplication.class, args);
+		SpringApplication.run(HousingCooperartiveApplication.class, args);
 	}
 
 }

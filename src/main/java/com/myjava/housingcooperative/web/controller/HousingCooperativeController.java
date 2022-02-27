@@ -1,4 +1,4 @@
-package com.myjava.housingrecord.web.controller;
+package com.myjava.housingcooperative.web.controller;
 
 import java.util.UUID;
 
@@ -13,9 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.myjava.housingrecord.web.model.HousingCooperativeDto;
-import com.myjava.housingrecord.web.service.CooperativeService;
-//import com.sun.org.slf4j.internal.Logger;
+import com.myjava.housingcooperative.web.model.HousingCooperativeDto;
+import com.myjava.housingcooperative.web.service.CooperativeService;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
