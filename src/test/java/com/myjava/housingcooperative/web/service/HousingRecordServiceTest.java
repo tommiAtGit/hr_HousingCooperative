@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.myjava.housingcooperative.web.model.HousingCooperativeDto;
-import com.myjava.housingcooperative.web.service.CooperativeService;
 
 @SpringBootTest
 class HousingRecordServiceTest {

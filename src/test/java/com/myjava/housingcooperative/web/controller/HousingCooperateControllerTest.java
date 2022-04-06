@@ -20,7 +20,6 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.myjava.housingcooperative.web.controller.HousingCooperativeController;
 import com.myjava.housingcooperative.web.model.HousingCooperativeDto;
 import com.myjava.housingcooperative.web.service.CooperativeService;
 
