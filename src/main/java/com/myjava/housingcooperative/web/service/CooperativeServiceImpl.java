@@ -75,7 +75,6 @@ public class CooperativeServiceImpl implements CooperativeService {
 
 	@Override
 	public List<HousingCooperativeDto> getAll() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
