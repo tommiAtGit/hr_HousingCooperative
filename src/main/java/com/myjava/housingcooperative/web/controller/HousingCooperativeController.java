@@ -27,7 +27,12 @@ public class HousingCooperativeController {
 
 	
 	private final CooperativeService cooperativeService;
-	
+	@GetMapping("/")
+	public ResponseEntity<List<HousingCooperativeDto>getAllCooperatives(){
+		log.info("Get all Cooperatives called");
+		return new ResponseEntity<List<HousingCooperativeDto>>(cooperativeService.getAll();
+	}
+
 	@GetMapping("/{cooperativeId}")
 	public ResponseEntity<HousingCooperativeDto>getCooperativeById(@PathVariable("cooperativeId")UUID cooperativeId){
 		log.info("Get Cooperative called with id: " + cooperativeId);

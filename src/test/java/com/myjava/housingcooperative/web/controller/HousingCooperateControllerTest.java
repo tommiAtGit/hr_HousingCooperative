@@ -43,6 +43,15 @@ class HousingCooperateControllerTest {
 	}
 
 	@Test
+	void getAllCooperatives() throws Exception{
+		given(cooperateService.getAll()).willReturn(getAllCooperativesDto());
+
+		mockMvc.perform(get("/")
+				.accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
+
+	}
+
+	@Test
 	void getCooperativeById() throws Exception{
 		given(cooperativeService.getById(any())).willReturn(getValidCooperateiveDto());
 		
@@ -83,6 +92,15 @@ class HousingCooperateControllerTest {
 		
 	}
 	
+	private List<HousingCooperativeDto> getAllCooperativesDto(){
+		List<HousingCooperativeDto> allDtos = new ArrayList();
+		int i = 0;
+		while(i< 10){
+			allDtos.add(getValidCooperateiveDto());
+			i++;
+		}
+		return allDtos;
+	}
 	private HousingCooperativeDto getValidCooperateiveDto() {
 		
 		return HousingCooperativeDto.builder()
@@ -94,4 +112,5 @@ class HousingCooperateControllerTest {
 				.bankAccount("FI23220029933922")
 				.build();
 	}
+
 }
