@@ -8,7 +8,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import java.util.UUID;
-
+import java.util.List;
+import java.util.ArrayList;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -44,9 +45,9 @@ class HousingCooperateControllerTest {
 
 	@Test
 	void getAllCooperatives() throws Exception{
-		given(cooperateService.getAll()).willReturn(getAllCooperativesDto());
+		given(cooperativeService.getAll()).willReturn(getAllCooperativesDto());
 
-		mockMvc.perform(get("/")
+		mockMvc.perform(get("/api/housingcooperative/")
 				.accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
 
 	}
