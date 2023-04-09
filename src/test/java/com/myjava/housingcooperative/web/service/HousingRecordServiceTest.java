@@ -3,6 +3,8 @@ package com.myjava.housingcooperative.web.service;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.UUID;
+import java.util.List;
+import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +19,7 @@ class HousingRecordServiceTest {
 	CooperativeService service;
 	
 	@Test
-	void SaveNewHCtest() {
+	void SaveNewHCTest() {
 		
 		HousingCooperativeDto actualDto = service.saveNewHc(getValidCooperateiveDto());
 		assertNotNull(actualDto);
@@ -33,6 +35,15 @@ class HousingRecordServiceTest {
 		
 	}
 	
+	@Test
+	void GetAllHousingCooperativesTest(){
+		
+		
+		List<HousingCooperativeDto> hc_dtos  = service.getAll();
+		assertNotNull(hc_dtos);
+		assertEquals(10, hc_dtos.size());
+		
+	}
 
 	@Test
 	void GetByIdTest() {
@@ -45,6 +56,7 @@ class HousingRecordServiceTest {
 		
 		
 	}
+	
 	@Test
 	void GetByNameTest() {
 		

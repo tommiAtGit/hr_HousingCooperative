@@ -8,7 +8,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import java.util.UUID;
-
+import java.util.List;
+import java.util.ArrayList;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -40,6 +41,15 @@ class HousingCooperateControllerTest {
 
 	@AfterEach
 	void tearDown() throws Exception {
+	}
+
+	@Test
+	void getAllCooperatives() throws Exception{
+		given(cooperativeService.getAll()).willReturn(getAllCooperativesDto());
+
+		mockMvc.perform(get("/api/housingcooperative/")
+				.accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
+
 	}
 
 	@Test
@@ -83,6 +93,15 @@ class HousingCooperateControllerTest {
 		
 	}
 	
+	private List<HousingCooperativeDto> getAllCooperativesDto(){
+		List<HousingCooperativeDto> allDtos = new ArrayList();
+		int i = 0;
+		while(i< 10){
+			allDtos.add(getValidCooperateiveDto());
+			i++;
+		}
+		return allDtos;
+	}
 	private HousingCooperativeDto getValidCooperateiveDto() {
 		
 		return HousingCooperativeDto.builder()
@@ -94,4 +113,5 @@ class HousingCooperateControllerTest {
 				.bankAccount("FI23220029933922")
 				.build();
 	}
+
 }

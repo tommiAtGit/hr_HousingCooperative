@@ -1,5 +1,6 @@
 package com.myjava.housingcooperative.web.controller;
 
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.http.HttpStatus;
@@ -27,7 +28,12 @@ public class HousingCooperativeController {
 
 	
 	private final CooperativeService cooperativeService;
-	
+	@GetMapping("/")
+	public ResponseEntity<List<HousingCooperativeDto>>getAllCooperatives(){
+		log.info("Get all Cooperatives called");
+		return new ResponseEntity<List<HousingCooperativeDto>>(cooperativeService.getAll(),HttpStatus.OK);
+	}
+
 	@GetMapping("/{cooperativeId}")
 	public ResponseEntity<HousingCooperativeDto>getCooperativeById(@PathVariable("cooperativeId")UUID cooperativeId){
 		log.info("Get Cooperative called with id: " + cooperativeId);

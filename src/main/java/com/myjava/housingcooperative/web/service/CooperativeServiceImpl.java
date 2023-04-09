@@ -1,5 +1,6 @@
 package com.myjava.housingcooperative.web.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -75,7 +76,17 @@ public class CooperativeServiceImpl implements CooperativeService {
 
 	@Override
 	public List<HousingCooperativeDto> getAll() {
-		return null;
+		
+		List<HousingCooperativeDto>hc_dtoList = new ArrayList<HousingCooperativeDto>();
+		
+		Iterable<HousingCooperative> hc_list = repository.findAll();
+		for(HousingCooperative item:hc_list ) {
+			hc_dtoList.add(mapper.HousingCooperativeToDto(item));
+		}
+		
+		return hc_dtoList;
+		
+		
 	}
 
 }
