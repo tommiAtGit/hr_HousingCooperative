@@ -9,8 +9,8 @@
 	<description>Demo project for Spring Boot</description>
 	
 	<parent>
-		<groupId>com.myjava.housingrecord.housingapartment</groupId>
-		<artifactId>housingaparment</artifactId>
+		<groupId>com.myjava.housingrecord.housing-parent</groupId>
+		<artifactId>housing-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	
@@ -119,13 +119,6 @@
 		</dependency>
 	</dependencies>
 
-    <repositories>
-      <repository>
-        <id>github</id>
-        <name>housingaparment</name>
-        <url>https://maven.pkg.github.com/tommiAtGit/housing-parent</url>
-      </repository>
-    </repositories>
     
 	<build>
 		<plugins>
