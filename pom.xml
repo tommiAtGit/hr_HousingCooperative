@@ -119,6 +119,13 @@
 		</dependency>
 	</dependencies>
 
+<distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Dishant Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/tommiAtGit/housing-parent</url>
+        </repository>
+    </distributionManagement>
     
 	<build>
 		<plugins>
