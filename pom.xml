@@ -9,17 +9,18 @@
 	<description>Demo project for Spring Boot</description>
 	
 	<parent>
-		<groupId>com.myjava.housingrecord.housingapartment</groupId>
-		<artifactId>housingaparment</artifactId>
+		<groupId>com.myjava.housingrecord.housing-parent</groupId>
+		<artifactId>housing-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../housing-parent</relativePath>
 	</parent>
-	
+	 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>14</java.version>
 		<jaxb.version>2.3.0</jaxb.version>
-		<mysql.version>8.0.16</mysql.version>
+		<mysql.version>8.0.32</mysql.version>
 		<lombok.version>1.18.18</lombok.version>
 		<mapstruct.version>1.4.2.Final</mapstruct.version>
 		<maven.complier.source>$(java.version)</maven.complier.source>
@@ -50,7 +51,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<scope>runtime</scope>
+			<version>${mysql.version}</version>
 		</dependency>
 		
         <dependency>
@@ -118,7 +119,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
+    
 	<build>
 		<plugins>
 			<plugin>
